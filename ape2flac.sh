@@ -24,7 +24,7 @@ command -v flac > /dev/null 2>&1 || {
 
 read -p "### ?? This script will take one .ape file and one .cue file and convert it into a couple of .flac files. Press enter to continue..."
 
-# Set the break in array ro linebreak and not space, must handle spaces in filenames
+# Set the break in array to linebreak and not space, must handle spaces in filenames
 IFS=$'\n'
 
 # Get the .ape and .cue files into arrays
@@ -87,7 +87,7 @@ echo >&2 "###    .ape converted to .wav, done..."
 bchunk -w ape2flacstep1.wav "${CUE_FILE}" ape2flacstep2
 echo >&2 "###    .wav split into .wav's, done..."
 
-# Convert the .wav tracks into .falc files
+# Convert the .wav tracks into .flac files
 flac --best ape2flacstep2*
 echo >&2 "###    .wav's converted to .flac's, done..."
 
